@@ -69,10 +69,8 @@
         "visual-studio-code"
         "alacritty"
         "obsidian"
+				"telegram-desktop"
       ];
-			masApps = {
-				"Telegram" = 747648890;
-			};
       # Ensure to specify the cleanup correctly or remove it if not needed
       onActivation.cleanup = "zap";
 			onActivation.autoUpdate = true;
@@ -110,14 +108,14 @@
 				"System/Applications/Mail.app"
 				"Applications/Firefox.app"
 				"Applications/Docker.app"
-				"Applications/VisualStudioCode.app"
+				"Applications/Visual Studio Code.app"
 				"Applications/Zed.app"
 				"Applications/Alacritty.app"
 			];
 			finder.FXPreferredViewStyle = "clmv";
 			loginwindow.GuestEnabled = false;
-			NSGlobalDomain.AplleICUForce24ourTime = true;
-			NSGlobalDomain.AppleIntefaceStyle = "Dark";
+			NSGlobalDomain.AppleICUForce24HourTime = true;
+			NSGlobalDomain.AppleInterfaceStyle = "Dark";
 			NSGlobalDomain.KeyRepeat = 2;
 		};
 
