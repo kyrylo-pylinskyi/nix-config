@@ -53,6 +53,9 @@
 
     homebrew = {
       enable = true;
+			brews = [
+				"mas"
+			];
       casks = [
         "hammerspoon"
         "firefox"
@@ -67,8 +70,13 @@
         "alacritty"
         "obsidian"
       ];
+			masApps = {
+				"Telegram" = 747648890;
+			};
       # Ensure to specify the cleanup correctly or remove it if not needed
       onActivation.cleanup = "zap";
+			onActivation.autoUpdate = true;
+			onActivation.upgrade = true;
     };
 
     fonts.packages = [
@@ -94,6 +102,24 @@
         ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
       done
     '';
+
+		system.defaults = {
+			dock.autohide = true;
+			dock.persistent-apps = [
+				"System/Applications/Calendar.app"
+				"System/Applications/Mail.app"
+				"Applications/Firefox.app"
+				"Applications/Docker.app"
+				"Applications/VisualStudioCode.app"
+				"Applications/Zed.app"
+				"Applications/Alacritty.app"
+			];
+			finder.FXPreferredViewStyle = "clmv";
+			loginwindow.GuestEnabled = false;
+			NSGlobalDomain.AplleICUForce24ourTime = true;
+			NSGlobalDomain.AppleIntefaceStyle = "Dark";
+			NSGlobalDomain.KeyRepeat = 2;
+		};
 
     # Auto upgrade nix package and the daemon service.
     services.nix-daemon.enable = true;
